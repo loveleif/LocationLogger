@@ -90,5 +90,24 @@ public class LocLogService extends Service {
 		
 		Log.d(TAG, "Destroyed service.");
 	}
+	
+	/**
+	 * Convenience method for creating an Intent that can start the service.
+	 * 
+	 * @param context Context within wich the Serivce should run
+	 * @param minTime minumum time in ms between location updates
+	 * @param minDistance minimum distance in m between location updates
+	 * @return Intent that can be used to start this Service.
+	 */
+	public static Intent genStartIntent(Context context, long minTime, float minDistance) {
+        final Intent intent = new Intent(context, LocLogService.class);
+        
+        Bundle bundle = new Bundle(2);
+        bundle.putLong(LocLogService.KEY_MIN_TIME, minTime);
+        bundle.putFloat(LocLogService.KEY_MIN_DISTANCE, minDistance);
+		intent.putExtras(bundle);
+		
+        return intent;
+	}
 
 }

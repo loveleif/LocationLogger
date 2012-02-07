@@ -1,6 +1,7 @@
 package se.leiflandia.loclog;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,11 +18,8 @@ public class LocLogActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        final Intent intent = new Intent(getApplicationContext(), LocLogService.class);
-        Bundle bundle = new Bundle(2);
-        bundle.putLong(LocLogService.KEY_MIN_TIME, 5000);
-        bundle.putFloat(LocLogService.KEY_MIN_DISTANCE, 1);
-
+        final Intent intent = LocLogService.genStartIntent(getApplicationContext(), 5000, 1);
+        
         final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.tglLocLogService);
         togglebutton.setOnClickListener(new OnClickListener() {
         	public void onClick(View v) {
