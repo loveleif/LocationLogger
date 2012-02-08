@@ -4,5 +4,8 @@
     <string name="hello">Hello World, LocationLoggerActivity!</string>
     <string name="app_name">LocationLogger</string>
     <string name="loclogservice_toggle">LocLogService</string>
+    <string name="lblOnOff">Logging Service Switch</string>
+    <string name="lblMinTime">Min Time (ms):</string>
+    <string name="lblMinDist">Min Distance (m):</string>
 
 </resources>
