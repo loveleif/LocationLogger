@@ -109,5 +109,8 @@ public class LocLogService extends Service {
 		
         return intent;
 	}
-
+	
+	public static Intent genStartIntent(Context context) {
+		return genStartIntent(context, DEFAULT_MIN_TIME, DEFAULT_MIN_DISTANCE);
+	}
 }
