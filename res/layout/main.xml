@@ -25,7 +25,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/minTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number" >
@@ -41,7 +41,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/minDistance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal" />
