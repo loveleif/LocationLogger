@@ -1,6 +1,8 @@
 package se.leiflandia.loclog;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +17,7 @@ public class LocLogActivity extends Activity {
 	
 	private EditText edtMinTime;
 	private EditText edtMinDistance;
+	// TODO onOff-button should be on if service is on.
 	ToggleButton onOff;
     
     @Override
@@ -31,6 +34,7 @@ public class LocLogActivity extends Activity {
         edtMinTime = (EditText) findViewById(R.id.minTime);
         edtMinDistance = (EditText) findViewById(R.id.minDistance);
         onOff = (ToggleButton) findViewById(R.id.tglLocLogService);
+        onOff.setChecked(Util.isServiceRunning((ActivityManager) getSystemService(ACTIVITY_SERVICE), LocLogService.class.getName()));
     }
     
     private void updateIntent() {
